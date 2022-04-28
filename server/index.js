@@ -39,9 +39,10 @@ app.get('/', (req, res) => {
 
 
 
-app.use(rollbar.errorHandler())
+
 app.use(express.json())
 
 const port = process.env.PORT || 4545
 
+app.use(rollbar.errorHandler())
 app.listen(port, () => console.log(`All systems go on ${port}`))
