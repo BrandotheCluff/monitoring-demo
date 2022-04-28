@@ -13,9 +13,14 @@ var rollbar = new Rollbar({
 // record a generic message and send it to Rollbar
 rollbar.log('Hello world!')
 
+let students = []
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../index.html'))
 })
+
+const Rollbar = require('rollbar')
+
 
 app.get('/', (req,res) => {
     res.sendFile(path.join(__dirname, '../index.html'))
