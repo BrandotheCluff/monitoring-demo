@@ -27,6 +27,9 @@ app.get('/', (req,res) => {
     rollbar.info('html file served successfully.')
 })
 
+app.use(rollbar.errorHandler())
+app.use(express.json())
+
 const port = process.env.PORT || 4545
 
 app.listen(port, () => console.log(`All systems go on ${port}`))
